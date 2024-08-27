@@ -11,6 +11,12 @@ var schema = buildSchema(`
     weight: Float! 
     isOver18: Boolean
     hobbies: [String]
+    user: User
+  }
+
+  type User {
+    id:ID
+    name: String
   }
 `) // ! is used to mark any field mandatory or non optional
  
@@ -30,6 +36,12 @@ var rootValue = {
   },
   hobbies: () => {
     return ['Carting', 'F1', 'Simulator']
+  },
+  user: () => {
+    return{
+      id: 1,
+    name: 'Sathwik'
+    }
   }
 }
 
